@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>TeleTool | Professional Telegram Forwarder and Automation</title>
+    <meta name="title" content="TeleTool | Professional Telegram Forwarder and Automation">
+    <meta name="description"
+        content="Professional Telegram Multi-Service Forwarder. Build automated workflows with real-time forwarding, AI digests, and webhook integrations.">
+    <meta name="keywords"
+        content="Telegram Forwarder, Multi-Service, Webhook Integrations, AI Digests, Auto Translation, Smart Chat Sync">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://teletool.netlify.app/">
+    <meta property="og:title" content="TeleTool | Professional Telegram Multi-Service Forwarder">
+    <meta property="og:description"
+        content="Automate your Telegram with Real-Time Forwarding, AI Digests, and Webhook Integrations.">
+    <meta property="og:image" content="assets/hero_image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://teletool.netlify.app/">
+    <meta property="twitter:title" content="TeleTool | Professional Telegram Multi-Service Forwarder">
+    <meta property="twitter:description"
+        content="Automate your Telegram with Real-Time Forwarding, AI Digests, and Webhook Integrations.">
+    <meta property="twitter:image" content="assets/hero_image.png">
+
+    <!-- Google Fonts - Inter & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="app-bar">
+        <div class="container container-flex">
+            <div class="logo">
+                <span class="logo-icon">T</span>
+                <span class="logo-text">TeleTool</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileMenuToggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <aside class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <button class="close-toggle" id="closeMenu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <nav>
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#how-it-works" class="mobile-link">How it Works</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+        </nav>
+    </aside>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content" data-reveal="left">
+                    <h1 class="display-large">Automate Your <span class="text-accent">Telegram</span> Workflow with Ease
+                    </h1>
+                    <p class="body-large text-muted">The ultimate tool for message forwarding, multi-service support,
+                        and real-time data automation. Scalable, secure, and incredibly fast.</p>
+                    <div class="hero-actions">
+                        <a href="https://vimeo.com/your-demo" target="_blank" class="btn btn-outline btn-lg">
+                            Watch Demo <i class="bi bi-play-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper" data-reveal="right">
+                    <div class="hero-image-backdrop"></div>
+                    <img src="assets/hero_image.png" alt="TeleTool Dashboard Preview" class="hero-img elevation-24">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-flex">
+                <div class="stat-item">
+                    <h2 class="display-medium">10k+</h2>
+                    <p class="label-large text-mutedCaps">Active Services</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="display-medium">1M+</h2>
+                    <p class="label-large text-mutedCaps">Messages Forwarded</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="display-medium">99.9%</h2>
+                    <p class="label-large text-mutedCaps">Uptime Guarantee</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features bg-surface-variant">
+            <div class="container section-header text-center" data-reveal="top">
+                <span class="badge">Core Features</span>
+                <h2 class="display-small">Everything You Need to Scale</h2>
+                <p class="body-large text-muted mx-auto" style="max-width: 600px;">Built by engineers for businesses
+                    that demand reliability and speed in their Telegram operations.</p>
+            </div>
+
+            <div class="container feature-grid">
+                <!-- Feature 1: Real-Time Forwarding -->
+                <div class="card elevation-1" data-reveal="bottom">
+                    <div class="card-icon bg-primary-container">
+                        <i class="bi bi-arrow-repeat text-primary"></i>
+                    </div>
+                    <h3 class="title-large">Real-Time Forwarding</h3>
+                    <p class="body-medium">Instantly mirror messages from channels, groups, bots, or contacts to any
+                        destination with zero latency.</p>
+                </div>
+
+                <!-- Feature 2: Webhook Integrations -->
+                <div class="card elevation-1" data-reveal="bottom" data-delay="100">
+                    <div class="card-icon bg-secondary-container">
+                        <i class="bi bi-link-45deg text-secondary"></i>
+                    </div>
+                    <h3 class="title-large">Webhook Integrations</h3>
+                    <p class="body-medium">Send Telegram messages directly to your CRM, Slack, Discord, or any external
+                        system via secure webhooks.</p>
+                </div>
+
+                <!-- Feature 3: Smart Chat Sync -->
+                <div class="card elevation-1" data-reveal="bottom" data-delay="200">
+                    <div class="card-icon bg-tertiary-container">
+                        <i class="bi bi-chat-dots-fill text-tertiary"></i>
+                    </div>
+                    <h3 class="title-large">Smart Chat Sync</h3>
+                    <p class="body-medium">Automatic updates: If a message is edited, deleted, or replied to in the
+                        source, it syncs instantly to the destination.</p>
+                </div>
+
+                <!-- Feature 4: Auto Translation -->
+                <div class="card elevation-1" data-reveal="bottom" data-delay="300">
+                    <div class="card-icon bg-primary-container">
+                        <i class="bi bi-translate text-primary"></i>
+                    </div>
+                    <h3 class="title-large">Auto Translation</h3>
+                    <p class="body-medium">Global reach made easy. Convert local-language channels into any foreign
+                        language automatically in real-time.</p>
+                </div>
+
+                <!-- Feature 5: AI Digests -->
+                <div class="card elevation-1" data-reveal="bottom" data-delay="400">
+                    <div class="card-icon bg-secondary-container">
+                        <i class="bi bi-robot text-secondary"></i>
+                    </div>
+                    <h3 class="title-large">AI Digests</h3>
+                    <p class="body-medium">Track 100+ groups effortlessly. Our AI filters noise and delivers only the
+                        critical messages that matter to you.</p>
+                </div>
+
+                <!-- Feature 6: Advanced Filters -->
+                <div class="card elevation-1" data-reveal="bottom" data-delay="500">
+                    <div class="card-icon bg-tertiary-container">
+                        <i class="bi bi-funnel-fill text-tertiary"></i>
+                    </div>
+                    <h3 class="title-large">Powerful Filtering</h3>
+                    <p class="body-medium">Precision control with regex, keyword, and user-id filters to ensure your
+                        destination stays clean and relevant.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container section-header text-center" data-reveal="top">
+                <h2 class="display-small">Get Started in 3 Simple Steps</h2>
+            </div>
+
+            <div class="container timeline">
+                <div class="step" data-reveal="left">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4 class="title-medium">Connect Your Account</h4>
+                        <p class="body-medium">Just input your API ID and Hash. Scan the QR code, and you're in. It's
+                            that simple.</p>
+                    </div>
+                </div>
+                <div class="step" data-reveal="right">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4 class="title-medium">Configure Your Flows</h4>
+                        <p class="body-medium">Select source channels and specify destination groups. Add keyword
+                            filters if needed.</p>
+                    </div>
+                </div>
+                <div class="step" data-reveal="left">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4 class="title-medium">Go Live</h4>
+                        <p class="body-medium">Switch the toggle on. Your messages will now start flowing across your
+                            network instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta bg-primary-gradient">
+            <div class="container text-center" data-reveal="bottom">
+                <h2 class="display-medium text-white mb-6">Powering the Future of Telegram Automation</h2>
+                <div class="cta-actions">
+                    <p class="text-white-opacity mt-4 body-large">Enterprise-grade reliability for your communication
+                        flows.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo mb-4">
+                    <span class="logo-icon white">T</span>
+                    <span class="logo-text white">TeleTool</span>
+                </div>
+                <p class="body-small text-muted-white">The most advanced Telegram forwarding platform on the market.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h5 class="label-large text-white mb-4caps">Product</h5>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">Solutions</a>
+                    <a href="#pricing">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h5 class="label-large text-white mb-4caps">Resources</h5>
+                    <a href="#">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-col">
+                    <h5 class="label-large text-white mb-4caps">Company</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom text-center">
+            <p class="body-small text-muted-white">&copy; 2026 TeleTool Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

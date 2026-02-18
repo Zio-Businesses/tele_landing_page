@@ -4,7 +4,8 @@ const redis = Redis.fromEnv();
 
 export default async function handler(request, response) {
     const POLL_KEY = 'teletool_waitlist_count';
-
+    console.log("ENV URL:", process.env.UPSTASH_REDIS_REST_URL);
+    console.log("ENV TOKEN:", process.env.UPSTASH_REDIS_REST_TOKEN ? "EXISTS" : "MISSING");
     try {
         if (request.method === 'GET') {
             const count = await redis.get(POLL_KEY) || 124; // Fallback to initial seed

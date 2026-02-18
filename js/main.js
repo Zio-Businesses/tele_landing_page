@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Try to fetch remote count
     const initPoll = async () => {
-        let count = 124; // Default seed
+        let count = 0; // Default seed
         try {
             const res = await fetch(REMOTE_POLL_URL, { method: 'GET' });
             if (res.ok) {

@@ -1,30 +1,64 @@
-import { Redis } from '@upstash/redis';
+import { createClient } from 'redis';
 
-const redis = Redis.fromEnv();
+let redis;
 
-export default async function handler(request, response) {
-    const POLL_KEY = 'teletool_waitlist_count';
-    console.log("ENV URL:", process.env.UPSTASH_REDIS_REST_URL);
-    console.log("ENV TOKEN:", process.env.UPSTASH_REDIS_REST_TOKEN ? "EXISTS" : "MISSING");
+async function getRedis() {
+    if (!redis) {
+        redis = createClient({
+            url: process.env.REDIS_URL
+        });
+
+        redis.on('error', (err) => {
+            console.error('Redis Client Error', err);
+        });
+
+        await redis.connect();
+    }
+
+    return redis;
+}
+
+export default async function handler(req, res) {
+
     try {
-        if (request.method === 'GET') {
-            const count = await redis.get(POLL_KEY) || 124; // Fallback to initial seed
-            return response.status(200).json({ count: Number(count) });
-        }
 
-        if (request.method === 'POST') {
-            const { action } = request.body;
-            if (action === 'vote') {
-                const newCount = await redis.incr(POLL_KEY);
-                return response.status(200).json({ count: Number(newCount) });
+        const client = await getRedis();
+
+        const key = "teletool_waitlist_count";
+
+        if (req.method === "GET") {
+
+            let count = await client.get(key);
+
+            if (!count) {
+                await client.set(key, 124);
+                count = 124;
             }
-            return response.status(400).json({ error: 'Invalid action' });
+
+            return res.status(200).json({
+                count: Number(count)
+            });
         }
 
-        return response.status(405).json({ error: 'Method not allowed' });
+        if (req.method === "POST") {
+
+            const count = await client.incr(key);
+
+            return res.status(200).json({
+                count: Number(count)
+            });
+        }
+
+        return res.status(405).json({
+            error: "Method not allowed"
+        });
+
     } catch (error) {
-        console.error('Redis Error:', error);
-        // Fallback for when Redis isn't configured yet
-        return response.status(200).json({ count: 124, warning: 'Redis not configured' });
+
+        console.error(error);
+
+        return res.status(500).json({
+            error: error.message
+        });
     }
 }

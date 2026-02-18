@@ -4,30 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://teletool.netlify.app/">
+    <meta name="robots" content="index,follow">
 
     <!-- Primary Meta Tags -->
-    <title>TeleTool | Professional Telegram Forwarder and Automation</title>
-    <meta name="title" content="TeleTool | Professional Telegram Forwarder and Automation">
+    <title>TeleTool | Professional Telegram Automation (Coming Soon)</title>
+    <meta name="title" content="TeleTool | Professional Telegram Automation (Coming Soon)">
     <meta name="description"
-        content="Professional Telegram Multi-Service Forwarder. Build automated workflows with real-time forwarding, AI digests, and webhook integrations.">
+        content="The future of Telegram automation. We are building the ultimate multi-service forwarder with real-time sync, AI digests, and more. Join the waitlist for early access.">
     <meta name="keywords"
         content="Telegram Forwarder, Multi-Service, Webhook Integrations, AI Digests, Auto Translation, Smart Chat Sync">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://teletool.netlify.app/">
-    <meta property="og:title" content="TeleTool | Professional Telegram Multi-Service Forwarder">
+    <meta property="og:title" content="TeleTool | Telegram Automation Reimagined">
     <meta property="og:description"
-        content="Automate your Telegram with Real-Time Forwarding, AI Digests, and Webhook Integrations.">
+        content="Join the growth. Real-Time Forwarding, AI Digests, and Webhook Integrations are coming soon. Get early access.">
     <meta property="og:image" content="assets/hero_image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://teletool.netlify.app/">
-    <meta property="twitter:title" content="TeleTool | Professional Telegram Multi-Service Forwarder">
+    <meta property="twitter:title" content="TeleTool | Professional Telegram Automation">
     <meta property="twitter:description"
-        content="Automate your Telegram with Real-Time Forwarding, AI Digests, and Webhook Integrations.">
+        content="The ultimate Telegram workflow tool. Currently in development – secure your spot for the early bird launch.">
     <meta property="twitter:image" content="assets/hero_image.png">
+
+    <!-- Social & identity additions -->
+    <meta property="og:site_name" content="TeleTool">
+    <meta name="twitter:site" content="@TeleTool">
+    <meta name="twitter:creator" content="@TeleTool">
 
     <!-- Google Fonts - Inter & Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +48,31 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "TeleTool",
+                    "url": "https://teletool.netlify.app/",
+                    "logo": "https://teletool.netlify.app/assets/hero_image.png"
+                },
+                {
+                    "@type": "WebSite",
+                    "url": "https://teletool.netlify.app/",
+                    "name": "TeleTool",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://teletool.netlify.app/?s={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+            ]
+        }
+        </script>
 </head>
 
 <body>
@@ -55,7 +87,7 @@
             <nav class="desktop-nav">
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How it Works</a>
-                <a href="#pricing">Pricing</a>
+                <a href="#productPoll">Early Access</a>
             </nav>
             <button class="mobile-toggle" id="mobileMenuToggle">
                 <i class="bi bi-list"></i>
@@ -73,7 +105,7 @@
         <nav>
             <a href="#features" class="mobile-link">Features</a>
             <a href="#how-it-works" class="mobile-link">How it Works</a>
-            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="#productPoll" class="mobile-link">Early Access</a>
         </nav>
     </aside>
 
@@ -82,14 +114,24 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-content" data-reveal="left">
-                    <h1 class="display-large">Automate Your <span class="text-accent">Telegram</span> Workflow with Ease
+                    <h1 class="display-large">The Future of <span class="text-accent">Telegram</span> Automation is
+                        Coming
                     </h1>
-                    <p class="body-large text-muted">The ultimate tool for message forwarding, multi-service support,
-                        and real-time data automation. Scalable, secure, and incredibly fast.</p>
+                    <p class="body-large text-muted">A powerful, scalable, and secure platform for message forwarding
+                        and data automation. We're currently in active development to bring you the best experience.</p>
                     <div class="hero-actions">
                         <a href="https://vimeo.com/your-demo" target="_blank" class="btn btn-outline btn-lg">
-                            Watch Demo <i class="bi bi-play-circle ml-2"></i>
+                            View Features <i class="bi bi-arrow-down-circle ml-2"></i>
                         </a>
+                    </div>
+
+                    <!-- Product poll: lightweight upvote widget -->
+                    <div class="hero-poll" id="productPoll">
+                        <button id="pollButton" class="btn btn-primary btn-lg" aria-pressed="false">
+                            <i class="bi bi-stars mr-2"></i>
+                            Get Early Access
+                        </button>
+                        <div id="pollCount" class="poll-count" aria-live="polite">Join 124 others</div>
                     </div>
                 </div>
                 <div class="hero-image-wrapper" data-reveal="right">
@@ -103,16 +145,16 @@
         <section class="stats">
             <div class="container stats-flex">
                 <div class="stat-item">
-                    <h2 class="display-medium">10k+</h2>
-                    <p class="label-large text-mutedCaps">Active Services</p>
+                    <h2 class="display-medium">500+</h2>
+                    <p class="label-large text-mutedCaps">Waitlist Members</p>
                 </div>
                 <div class="stat-item">
-                    <h2 class="display-medium">1M+</h2>
-                    <p class="label-large text-mutedCaps">Messages Forwarded</p>
+                    <h2 class="display-medium">Alpha</h2>
+                    <p class="label-large text-mutedCaps">Current Stage</p>
                 </div>
                 <div class="stat-item">
-                    <h2 class="display-medium">99.9%</h2>
-                    <p class="label-large text-mutedCaps">Uptime Guarantee</p>
+                    <h2 class="display-medium">2026</h2>
+                    <p class="label-large text-mutedCaps">Launch Year</p>
                 </div>
             </div>
         </section>
@@ -121,9 +163,9 @@
         <section id="features" class="features bg-surface-variant">
             <div class="container section-header text-center" data-reveal="top">
                 <span class="badge">Core Features</span>
-                <h2 class="display-small">Everything You Need to Scale</h2>
-                <p class="body-large text-muted mx-auto" style="max-width: 600px;">Built by engineers for businesses
-                    that demand reliability and speed in their Telegram operations.</p>
+                <h2 class="display-small">Features We're Building</h2>
+                <p class="body-large text-muted mx-auto" style="max-width: 600px;">Crafting the most reliable and
+                    feature-rich Telegram automation engine. Here's a glimpse of what's coming.</p>
             </div>
 
             <div class="container feature-grid">
@@ -226,10 +268,10 @@
         <!-- CTA Section -->
         <section class="cta bg-primary-gradient">
             <div class="container text-center" data-reveal="bottom">
-                <h2 class="display-medium text-white mb-6">Powering the Future of Telegram Automation</h2>
+                <h2 class="display-medium text-white mb-6">Shape the Future of Telegram Automation</h2>
                 <div class="cta-actions">
-                    <p class="text-white-opacity mt-4 body-large">Enterprise-grade reliability for your communication
-                        flows.</p>
+                    <p class="text-white-opacity mt-4 body-large">Be the first to know when we launch and secure
+                        exclusive early-bird benefits.</p>
                 </div>
             </div>
         </section>
@@ -243,14 +285,14 @@
                     <span class="logo-icon white">T</span>
                     <span class="logo-text white">TeleTool</span>
                 </div>
-                <p class="body-small text-muted-white">The most advanced Telegram forwarding platform on the market.</p>
+                <p class="body-small text-muted-white">The future of Telegram forwarding. Currently in development.</p>
             </div>
             <div class="footer-links">
                 <div class="footer-col">
                     <h5 class="label-large text-white mb-4caps">Product</h5>
                     <a href="#features">Features</a>
                     <a href="#how-it-works">Solutions</a>
-                    <a href="#pricing">Pricing</a>
+                    <a href="#productPoll">Early Access</a>
                 </div>
                 <div class="footer-col">
                     <h5 class="label-large text-white mb-4caps">Resources</h5>

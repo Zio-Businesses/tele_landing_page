@@ -256,6 +256,20 @@ li {
     margin-bottom: 16px;
 }
 
+.badge.soon {
+    background: var(--secondary-container);
+    color: var(--on-secondary-container);
+}
+
+/* Waitlist success state */
+.btn-primary:disabled {
+    background-color: var(--tertiary);
+    opacity: 0.8;
+    cursor: default;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 /* =====================================================
    HEADER & NAVIGATION
    ===================================================== */
@@ -416,6 +430,26 @@ section {
 /* utility spacing used in markup */
 .ml-2 {
     margin-left: 0.5rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+/* Poll widget */
+.hero-poll {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.poll-count {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--on-surface-variant);
+    min-width: 48px;
+    text-align: center;
 }
 
 .hero-image-wrapper {

@@ -1,9 +1,9 @@
 {
-  "name": "teletool-landing-page",
-  "version": "1.0.0",
-  "description": "TeleTool Landing Page with Vercel KV integration",
-  "main": "api/poll.js",
-  "dependencies": {
-    "@vercel/kv": "^1.0.1"
-  }
+    "name": "teletool-landing-page",
+    "version": "1.0.0",
+    "description": "TeleTool Landing Page with Vercel KV integration",
+    "main": "api/poll.js",
+    "dependencies": {
+        "@upstash/redis": "^1.28.4"
+    }
 }

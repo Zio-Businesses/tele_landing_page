@@ -30,15 +30,15 @@ export default async function handler(req, res) {
 
             let count = await client.get(key);
 
-            // Legacy reset: if count is 124, reset it to 0
-            if (count === "124") {
-                await client.set(key, 0);
-                count = "0";
+            // Migration: if count is 0, bump it to 124
+            if (count === "0") {
+                await client.set(key, 124);
+                count = "124";
             }
 
             if (!count) {
-                await client.set(key, 0);
-                count = 0;
+                await client.set(key, 124);
+                count = 124;
             }
 
             return res.status(200).json({

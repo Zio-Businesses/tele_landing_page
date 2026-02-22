@@ -302,22 +302,51 @@ li {
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: var(--primary-gradient);
     color: white;
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-icon::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: logo-shine 3s infinite;
+}
+
+@keyframes logo-shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .desktop-nav {
@@ -398,8 +427,8 @@ section {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
     align-items: center;
 }
 
@@ -409,7 +438,7 @@ section {
 
 .hero-content p {
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 580px;
 }
 
 /* Hero actions (buttons) */
@@ -458,8 +487,10 @@ section {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     border-radius: var(--radius-lg);
+    margin-top: -200px;
+    /* Shifted up further to align with headline top */
 }
 
 .hero-image-backdrop {
@@ -645,6 +676,12 @@ section {
     color: white;
 }
 
+.logo-text.white-text {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
+}
+
 /* =====================================================
    RESPONSIVE DESIGN MODIFIERS
    ===================================================== */
@@ -658,6 +695,11 @@ section {
     .hero-content p {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .hero-image-wrapper {
+        justify-content: center;
+        margin-top: 0;
     }
 
     .footer-grid {
@@ -721,4 +763,64 @@ section {
 [data-reveal].revealed {
     opacity: 1;
     transform: translate(0);
+}
+
+/* =====================================================
+   PREMIUM TOAST NOTIFICATION
+   ===================================================== */
+
+.toast-container {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    z-index: 9999;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.toast-container.active {
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    padding: 16px 24px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--elevation-4);
+    min-width: 320px;
+}
+
+.toast-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--tertiary-container);
+    color: var(--tertiary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 700;
+    color: var(--on-surface);
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.toast-message {
+    font-size: 0.875rem;
+    color: var(--on-surface-variant);
 }

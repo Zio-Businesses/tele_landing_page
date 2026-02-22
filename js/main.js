@@ -1,5 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Toast / Alert System ---
+    const showToast = (title, message, iconClass = 'bi-check-circle-fill') => {
+        const toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        toastContainer.innerHTML = `
+            <div class="toast">
+                <div class="toast-icon">
+                    <i class="bi ${iconClass}"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(toastContainer);
+
+        // Trigger animation
+        setTimeout(() => toastContainer.classList.add('active'), 50);
+
+        // Remove after delay
+        setTimeout(() => {
+            toastContainer.classList.remove('active');
+            setTimeout(() => toastContainer.remove(), 600);
+        }, 4000);
+    };
+
     // --- Mobile Menu Logic ---
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const closeMenu = document.getElementById('closeMenu');
@@ -126,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUI("..."); // Loading state
 
         // Show feedback immediately
-        alert("Thanks for your interest! We'll notify you as soon as we launch.");
+        showToast("Success! ✨", "Thanks for your interest! We'll notify you as soon as we launch.");
 
         try {
             const res = await fetch(REMOTE_POLL_URL, {
@@ -149,7 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (pollButton) {
         pollButton.addEventListener('click', () => {
-            if (hasVoted()) return;
+            if (hasVoted()) {
+                showToast("Already joined! ⚡", "You're already on our early access list. We'll be in touch soon!", "bi-info-circle-fill");
+                return;
+            }
             sendVote();
         });
     }

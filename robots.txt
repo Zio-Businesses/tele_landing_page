@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://teletool.netlify.app/sitemap.xml
+Sitemap: https://tele-tool-dev.vercel.app/sitemap.xml

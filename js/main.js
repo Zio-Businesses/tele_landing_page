@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
             console.error('Vote submission failed:', e);
         }
-        updateUI(124); // Fallback if post fails but alert was shown
+        updateUI(0); // Fallback if post fails but alert was shown
     };
 
     if (pollButton) {
